@@ -1,0 +1,49 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Test run finished"
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "View test results"
+          },
+          "url": "${CIRCLE_BUILD_URL}"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Environment:* environment"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Browser:* browser"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Result:*\nTotal: total_test_count\nPassed: passed_count\nFailed: failed_count\nError: error_count\nSkipped: skipped_count"
+        }
+      ]
+    }
+  ]
+}
