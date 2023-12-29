@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qawa"
+authors = [
+    {name = "Infinum"},
+    {email = "team.qa@infinum.com"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+description="A test automation framework based on pytest and Selenium."
+version = "0.0.1"
+requires-python = ">=3.9"
+
+dependencies = [
+  "pre-commit==3.3.3",
+  "pytest==7.4.0",
+  "pytest-check==2.2.0",
+  "pytest-html==4.0.2",
+  "pytest-xdist==3.3.1",
+  "requests==2.31.0",
+  "selenium==4.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/infinum/qawa"
+
+# pytest config
+[tool.pytest.ini_options]
+markers = [
+    "regression: marks tests as part of a regression test",
+    "smoke: marks tests as part of a smoke test",
+    "xray: marks tests with Xray test case IDs",
+]
+
+# pytest-html config
+log_level = "INFO"
+render_collapsed = "all"
+addopts = "-vs -rf --capture=tee-sys --self-contained-html"
